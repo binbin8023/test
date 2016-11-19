@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+      <meta charset="utf-8">
+      <meta name="author" content="zhiyong">
+      <meta name="viewport" content="width=device-width,
+      initial-scale=1,maximum-scale=1,user-scalable=no">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>折叠组</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+   <section class="container">
+       <!--nav nav-tabs 可以创建一些基于标签的导航-->
+       <!--role 当现有的html标签没有明确的含义 
+       通过role进行说明 常用语自定义组件上 可以增强
+       组件可用性 可交互性 -->
+       <!--aria-controls 不带#id值 不能文档结构确定的关联-->
+   <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#shizheng" role="tab"
+    data-toggle="tab" aria-controls="shizheng">时政</a></li>
+   <li role="presentation" ><a href="#caijing" role="tab"
+    data-toggle="tab" aria-controls="caijing">财经</a></li>
+    <li role="presentation" ><a href="#keji" role="tab"
+    data-toggle="tab" aria-controls="keji">科技</a></li>
+    <li role="presentation"><a href="#tiyu" role="tab"
+    data-toggle="tab" aria-controls="tiyu">体育</a></li>
+    </ul>
+    <!--标签栏面板-->
+    <!--tab-content 面板的内容-->
+    <div class="tab-content">
+        <!--每一个面板-->
+        <div class="tab-pane active" id="shizheng">
+            <ul style="list-style-type: disc">
+                <li>李白</li>
+                <li>李白</li>
+                <li>李白</li>
+                <li>李白</li>
+            </ul>
+        </div>
+
+        <div class="tab-pane" id="caijing">
+            <ul style="list-style-type: decimal;">
+            <li>王昭君</li>
+            <li>王昭君</li>
+            <li>王昭君</li>
+            <li>王昭君</li>
+            </ul>
+        </div>
+      
+      
+        <div class="tab-pane" id="keji">
+            <ul style="list-style-type:none; padding-left: 30px;">
+            <li>郭嘉</li>
+            <li>郭嘉</li>
+            <li>郭嘉</li>
+            <li>郭嘉</li>
+            </ul>
+        </div>
+
+           <div class="tab-pane" id="tiyu">
+            <ul style="list-style-type:upper-roman">
+            <li>水镜</li>
+            <li>水镜</li>
+            <li>水镜</li>
+            <li>水镜</li>
+            </ul>
+        </div>
+    </div>
+   </section>
+            <!--折叠组-->
+     <section class="container">
+         <div class="panel-group col-md-4 col-xs-12" id="one" role="tablist"
+         aria-multiselectable="true">
+          
+          <!--设置单独的一项-->
+          <div class="panel panel-default">
+            <!--panel-heading 每一项的头部 设置每一项额标题-->
+             <div class="panel-heading">
+                 <!--设置标题的颜色的类-->
+                <div class="panel-title">
+                    <h4>
+                        <a href="#myfriends" data-toggle="collapse"
+                        aria-expanded="true" aria-controls="myfriends"
+                        data-parent="one" role="button">我的好友</a>
+
+                    </h4>
+                </div>      
+             </div>
+          <!-- 第一项的折叠区域-->
+          <!--collapse in 显示折叠区域的-->
+          <!--collapse 隐藏折叠区域-->
+             <div id="myfriends" class="panel-collapse collapse in">
+                  <!--list-group 值得是折叠区域的队列-->
+                   <ul class="list-group">
+                       <!--队列的每一项-->
+                     <li class="list-group-item">
+                         <!--badge 消息的个数-->
+                         <span class="badge">2</span>
+                         芙蓉姐姐
+                     </li>
+                      <li class="list-group-item">
+                         <!--badge 消息的个数-->
+                         <span class="badge">99</span>
+                         犀利哥
+                     </li>
+                       <li class="list-group-item">
+                         <!--badge 消息的个数-->
+                         <span class="badge">99</span>
+                         小学生撸友
+                     </li>
+                      <li class="list-group-item">
+                         <!--badge 消息的个数-->
+                         <span class="badge">99</span>
+                         出门蓝药的盖伦
+                     </li>
+                   </ul>
+             </div>
+             <!--每一项结束div panel panel-default-->
+          </div>
+
+         <!--第二个箱-->
+          <div class="panel panel-default">
+           <div class="panel-heading">
+           <h4 class="panel-title">
+               <a href="#smallClass" data-toggle="collapse"
+               role="button" aria-expanded="false" aria-controls="smallClass">
+               小学同学</a>
+           </h4>
+           </div>
+           <!--第二项的折叠区域-->
+            <div id="smallClass" class="panel-collapse collapse">
+                <div class="list-group">
+                <a href="#" class="list-group-item active">小明</a>
+                <a href="#" class="list-group-item ">高富帅</a>
+                <a href="#" class="list-group-item ">白富美</a>
+                <a href="#" class="list-group-item ">兰嗖</a>
+                </div>
+            </div>
+          </div>
+          
+           <div class="panel panel-default">
+           <div class="panel-heading">
+           <h4 class="panel-title">
+               <a href="#middleClass" data-toggle="collapse"
+               role="button" aria-expanded="false" aria-controls="middleClass">
+               中学同学</a>
+           </h4>
+           </div>
+           <!--第二项的折叠区域-->
+            <div id="middleClass" class="panel-collapse collapse">
+                <div class="list-group">
+                <a href="#" class="list-group-item active">小明</a>
+                <a href="#" class="list-group-item-danger">高富帅</a>
+                <a href="#" class="list-group-item-warning ">白富美</a>
+                <a href="#" class="list-group-item-info">兰嗖</a>
+                </div>
+            </div>
+          </div>
+          
+          
+
+
+         <!--panel-group-->
+         </div>
+     </section>
+
+            
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+   
+  </body>
+</html>
